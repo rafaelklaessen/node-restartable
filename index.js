@@ -11,6 +11,18 @@ class MyClass extends Restartable {
     this.random = Math.random();
   }
 
+  set baz(value) {
+    console.log(this)
+    if (Math.round(this.random * 10) === 7) return this._baz = value;
+    throw new Error('Fantastic');
+  }
+
+  get bar() {
+    console.log(this)
+    if (Math.round(this.random * 10) === 7) return 19;
+    throw new Error('Fantastic');
+  }
+
   foo() {
     console.log(this)
     if (Math.round(this.random * 10) === 7) return 8;
@@ -20,7 +32,11 @@ class MyClass extends Restartable {
 
 const instance = createInstance(MyClass, true)('foo', 'bar');
 
-console.log(instance.foo)
+console.log(instance.foo);
 console.log(instance.foo());
 instance.restart();
 instance.restart();
+console.log(instance.bar);
+console.log(instance.baz = 7);
+console.log(instance.seven = 7);
+console.log(instance.random);
