@@ -48,7 +48,9 @@ const wrapInProxy = wrapperInstance => new Proxy(wrapperInstance, {
     const { autoRestart, instance } = obj.__INTERNAL__store;
 
     if (!autoRestart && typeof instance[prop] === 'function') {
-      return instance[prop].bind(instance);
+      // NOTE: We don't use destructuring here so that the bound instance
+      // will always be the newest instance.
+      return instance[prop].bind(obj.__INTERNAL__store.instance);
     }
 
     if (!autoRestart) {
