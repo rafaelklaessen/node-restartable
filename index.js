@@ -22,3 +22,5 @@ const instance = createInstance(MyClass, true)('foo', 'bar');
 
 console.log(instance.foo)
 console.log(instance.foo());
+instance.restart();
+instance.restart();
