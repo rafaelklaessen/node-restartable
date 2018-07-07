@@ -12,19 +12,19 @@ class MyClass extends Restartable {
   }
 
   set baz(value) {
-    console.log(this)
+    console.log(this);
     if (Math.round(this.random * 10) === 7) return this._baz = value;
     throw new Error('Fantastic');
   }
 
   get bar() {
-    console.log(this)
+    console.log(this);
     if (Math.round(this.random * 10) === 7) return 19;
     throw new Error('Fantastic');
   }
 
   foo() {
-    console.log(this)
+    console.log(this);
     if (Math.round(this.random * 10) === 7) return 8;
     throw new Error('Fantastic');
   }

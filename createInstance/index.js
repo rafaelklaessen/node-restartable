@@ -47,6 +47,10 @@ const wrapInProxy = wrapperInstance => new Proxy(wrapperInstance, {
     if (prop === 'restart') return obj[prop];
     const { autoRestart, instance } = obj.__INTERNAL__store;
 
+    if (!autoRestart && typeof instance[prop] === 'function') {
+      return instance[prop].bind(instance);
+    }
+
     if (!autoRestart) {
       return instance[prop];
     }
