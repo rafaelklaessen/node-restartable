@@ -1,0 +1,19 @@
+{
+  "name": "node-restartable",
+  "version": "0.1.0",
+  "description": "Easily build crash-proof modules!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelklaessen/node-restartable.git"
+  },
+  "author": "Rafael Klaessen <rafaelklaessen.nl@gmail.com> (https://rafaelklaessen.nl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rafaelklaessen/node-restartable/issues"
+  },
+  "homepage": "https://github.com/rafaelklaessen/node-restartable#readme"
+}
