@@ -1,7 +1,7 @@
 const RestartableWrapper = require('./RestartableWrapper');
 const wrapInProxy = require('./wrapInProxy');
 
-const createInstance = (Class, autoRestart = false) => (...params) => {
+const createInstance = (Class, autoRestart = true) => (...params) => {
   if (!Class.__IS_RESTARTABLE__) {
     throw new TypeError('Class is not a Restartable!');
   }
