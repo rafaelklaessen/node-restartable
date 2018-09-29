@@ -1,6 +1,11 @@
 const Restartable = require('./Restartable');
 const createInstance = require('./createInstance');
 
+module.exports = {
+  Restartable,
+  createInstance
+};
+
 class MyClass extends Restartable {
   static start(...params) {
     return new MyClass(...params);
